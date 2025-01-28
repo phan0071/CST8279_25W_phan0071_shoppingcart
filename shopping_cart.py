@@ -8,10 +8,7 @@ print("Welcome to the Shopping Cart Program!")
 
 # Ask the user for the number of items, price, and cost of each item
 
-restart = 'Yes'
-
-while restart == "Yes":
-
+while True:
     total_cost = float()
     price = int(input("How many items would you like to purchase?"))
 
@@ -26,13 +23,11 @@ while restart == "Yes":
             price = price - 1
         except ValueError:
             print("Error: Your input is invalid. Please retype the item information.")
-
+            continue
+    
     print('Your total cost is ', total_cost)
-
+    
     restart = input("\nWould you like to restart the program? (Yes/No): ")
-
-print("\nThank you for shopping with us!")
-
-# Additional features:
-# 1- Add an option to restart the program:
-
+    if restart == 'No':
+        print("\nThank you for shopping with us!")
+        break
